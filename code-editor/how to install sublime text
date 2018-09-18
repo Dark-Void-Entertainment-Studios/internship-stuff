@@ -1,0 +1,17 @@
+how to install sublime text
+
+1.go to "https://www.sublimetext.com/" and download sublime text 3
+2.run the installer
+3.launch sublime text for the first time and check it out for a bit
+
+some basic info about sublime text
+in the bottom right is tap/space size and conversion
+next to that is a code selector so you can pick what kind of code your going to use
+we will use "arduino like IDE>arduino" but we need to install a small pack for that first
+
+4.to install the pack we need(or any other pack if you ever need one) press "ctrl+shift+p"
+4,5.maybe you need to activate "package control" first
+5.then type "package control: install package" and press enter
+6.then type "arduino-like IDE" and press enter
+now it should install itself as you should be able to see in the bottom bar of sublime txt
+when this is done you can use sublime to code for an arduino
