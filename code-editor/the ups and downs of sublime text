@@ -31,4 +31,6 @@ voordelen:
 
 nadelen: 
 1. je moet een pack installeren (Arduino IDE pack) om Sublime te linken, en opslaan is ingewikkeld om te leren.
-2. je kan via Sublime niet uploaden, dat moet via arduino IDE. 
+2. je kan via Sublime niet uploaden, dat moet via arduino IDE.
+
+
