@@ -2,19 +2,19 @@ The ups and downs of Sublime text for Arduino Coding
 
 UPS
 
-1.Multi-Select
-2.Suggestions for faster coding
-3.errorchecks your code to a small degree, it won't write FOR you.
-4.adds some of the code you wrote to suggestions for later use. 
-5.search/find to edit or find things faster
-6.you can install a lot of packs to make it do more things or add new things it could not before
-7.any font and font size you want (font = text type)
+1. Multi-Select
+2. Suggestions for faster coding
+3. errorchecks your code to a small degree, it won't write FOR you.
+4. adds some of the code you wrote to suggestions for later use. 
+5. search/find to edit or find things faster
+6. you can install a lot of packs to make it do more things or add new things it could not before
+7. any font and font size you want (font = text type)
 
 
 DOWNS
 
-1.needs a pack to work for arduino(arduino-like IDE)
-2.cant directly upload to arduino, you will need to save, and then go to arduino IDE to test.
+1. needs a pack to work for arduino(arduino-like IDE)
+2. cant directly upload to arduino, you will need to save, and then go to arduino IDE to test.
 
 
 De voordelen en nadelen van het gebruik van Sublime text voor Arduino coderen (externe editor)
