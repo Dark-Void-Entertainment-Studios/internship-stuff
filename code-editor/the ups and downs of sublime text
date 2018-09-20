@@ -16,6 +16,7 @@ DOWNS
 1. needs a pack to work for arduino(arduino-like IDE)
 2. cant directly upload to arduino, you will need to save, and then go to arduino IDE to test.
 
+---------------------------------------------------------------------------------------------------------
 
 De voordelen en nadelen van het gebruik van Sublime text voor Arduino coderen (externe editor)
 
