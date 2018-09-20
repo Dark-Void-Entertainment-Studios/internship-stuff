@@ -44,7 +44,7 @@ om code te kunnen schrijven voor de arduino binnen sublime text moeten we eerst 
 stukken data die je aan een editor toe kan voegen om je opties te vergroten, in dit geval een connectie met de oude editor.
 
 1. om het pack (of elk andere pack) te installeren, houd ctrl+shift+p ingedrukt
-2. in de tekstbalk, type "arduino-like IDE" en klik op het pack
+2. in de tekstbalk, type "arduino-like IDE" en klik op de pack
 3. het zou zichzelf nu moeten installeren, dit is onderin te zien. 
 
 als alles goed is gegaan moet je nu de arduinotaal kunnen instellen. 
