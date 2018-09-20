@@ -1,0 +1,69 @@
+how to install sublime text
+
+1. go to "https://www.sublimetext.com/" and download sublime text 3
+2. run the installer
+3. launch sublime text for the first time and check it out for a bit
+
+some basic info about sublime text
+in the bottom right is tab/space size and conversion
+next to that is a code selector so you can pick what kind of code your going to use
+we will use "arduino like IDE>arduino" but we need to install a small pack for that first
+
+4. to install the pack we need(or any other pack if you ever need one) press "ctrl+shift+p"
+4,5. maybe you need to activate "package control" first
+5. then type "package control: install package" and press enter
+6. then type "arduino-like IDE" and press enter
+now it should install itself as you should be able to see in the bottom bar of sublime text
+when this is done you can use sublime to code for an arduino
+
+how to edit preferences for sublime
+1. go to the top bar and click "preferences" and then "settings"
+2. there you edit these lines on the right side: 
+{
+	"font_size": 14,
+	"font_face": "verdana",
+	"tab_size": 5,
+}
+
+font_face = how the text looks
+font_size = the size of text
+tab_size = how big a tab is
+
+only do so if you understand it and want to change it
+if done wrong it can break your sublime text and then you would need to reinstall it
+
+---------------------------------------------------------------------------------------------------
+
+handleiding om Sublime text te installeren
+1. ga naar "https://www.sublimetext.com/" en download Sublime text 3
+2. ga door de installatie heen, houd alles op basisinstellingen	
+3. Sublime zou nu geïnstalleerd moeten zijn, open het en kijk wat rond. 
+
+
+om code te kunnen schrijven voor de arduino binnen sublime text moeten we eerst een pack installeren (arduino like-IDE), packs zijn 
+stukken data die je aan een editor toe kan voegen om je opties te vergroten, in dit geval een connectie met de oude editor.
+
+1om het pack (of elk ander pack) te installeren, houd ctrl+shift+p ingedrukt
+2in de tekstbalk, type "arduino-like IDE" en klik op het pack
+3het zou zichzelf nu moeten installeren, dit is onderin te zien. 
+
+als alles goed is gegaan moet je nu de arduinotaal kunnen instellen. 
+
+wat basisinfo over Sublime text
+rechtsonderin zijn opties om de grootte van je tabbladen aan te passen en om je codetaal te veranderen
+
+mocht je de look van siblime niet fijn vinden, dan kan je het eventueel aanpassen.
+(DOE DIT ALLEEN ALS JE WEET WAAR JE MEE BEZIG BENT, JE KAN JE EDITOR SLOPEN, EN EEN COMPLETE REÏNSTALLATIE NOODZAKELIJK MAKEN)
+
+1. go naar de bovenste balk en klik op voorkeuren, en op instellingen
+
+op het scherm, aan de rechterkant, edit op deze manier
+{
+	"font_size": 14,
+	"font_face": "verdana",
+	"tab_size": 5,
+}
+
+font_size = de grootte van de letters
+font_face = het lettertype van de tekst
+tab_size = de grootte van de tabbladen
