@@ -56,7 +56,8 @@ function createUser()
 	if ($query == $person) {
 		return false;
 		exit();
-	} 
+	}
+
 
 
 
