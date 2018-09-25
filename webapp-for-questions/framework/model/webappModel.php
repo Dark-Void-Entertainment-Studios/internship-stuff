@@ -1,4 +1,26 @@
-<?php 
+<?php
+//working on
+function generateQuestions()
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM `questions`
+		JOIN `students` ON `questions`.`student_id` = `students`.`student_id`
+		ORDER BY `questions`.`time_stamp` DESC";
+	$query = $db->prepare($sql);
+	$query->execute();
+
+	$db = null;
+
+	return $query->fetchAll();
+}
+
+
+
+
+
+
+//for later. need some research
 function login()
 {
 	$name = isset($_POST["name"]) ? $_POST["name"] : null;

@@ -4,10 +4,10 @@ require(ROOT . "model/webappModel.php");
 
 function index()
 {
-	$questions = generateQuestions();
+	$allQuestions = generateQuestions();
 	
-	render("webapp/home", array(
-		'questions' => $questions)
+	render("webapp/index", array(
+		'questions' => $allQuestions)
 	);
 }
 

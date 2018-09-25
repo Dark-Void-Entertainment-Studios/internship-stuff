@@ -1,8 +1,6 @@
 <?php
 
 ?>
-
-
 <h2>Login</h2>
 <form action="<?= URL ?>webapp/login" method="POST">
 	<input type="text" placeholder="Enter Username" name="name" required >
