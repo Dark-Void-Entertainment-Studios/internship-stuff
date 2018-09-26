@@ -16,9 +16,64 @@ function generateQuestions()
 	return $query->fetchAll();
 }
 
+function getQuestion($idQ)
+{
+	$db = openDatabaseConnection();
 
+	$sql = "SELECT * FROM `questions`
+		JOIN `students` ON `questions`.`student_id` = `students`.`student_id`
+		JOIN `progress` ON `questions`.`progress_id` = `progress`.`progress_id`
+		WHERE question_id = :idQ LIMIT 1";
 
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		":idQ" => $idQ
+	));
 
+	$db = null;
+
+	return $query->fetch();
+}
+
+function getProgress()
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM `progress`
+	ORDER BY `progress`.`progress_id` ASC";
+
+	$query = $db->prepare($sql);
+	$query->execute();
+
+	$db = null;
+
+	return $query->fetchAll();
+}
+
+function editQuestion($idQ)
+{
+	$status = isset($_POST["status"]) ? $_POST["status"] : null;
+
+	if ($status === null) {
+		return false;
+		exit();
+	}
+
+	$db = openDatabaseConnection();
+
+	$sql = "UPDATE `questions` 
+		SET `progress_id`= :status
+		WHERE question_id = :idQ";
+
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		":status" => $status,
+		":idQ" => $idQ
+	));
+
+	$db = null;
+	return true;
+}
 
 
 //for later. need some research
@@ -45,6 +100,7 @@ function generateQuestions()
 	if ($row["student_password"]==$psw && $row["student_name"]==$name) {
 	session_start();
 	$_SESSION['student_name']= $name;
+	$_SESSION['student_id']= $name;
 	$_SESSION['password']= $psw;
 	} else {
 		return FALSE;
