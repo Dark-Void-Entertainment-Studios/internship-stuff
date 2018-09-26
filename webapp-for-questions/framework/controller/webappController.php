@@ -11,7 +11,9 @@ function index()
 	);
 }
 
-function sign_up()
+
+//for later	
+/*function sign_up()
 {
 
 
@@ -25,3 +27,4 @@ function login()
 
 }
 
+*/

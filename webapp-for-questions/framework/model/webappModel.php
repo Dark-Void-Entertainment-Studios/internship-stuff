@@ -6,6 +6,7 @@ function generateQuestions()
 
 	$sql = "SELECT * FROM `questions`
 		JOIN `students` ON `questions`.`student_id` = `students`.`student_id`
+		JOIN `progress` ON `questions`.`progress_id` = `progress`.`progress_id`
 		ORDER BY `questions`.`time_stamp` DESC";
 	$query = $db->prepare($sql);
 	$query->execute();
@@ -21,7 +22,7 @@ function generateQuestions()
 
 
 //for later. need some research
-function login()
+/*function login()
 {
 	$name = isset($_POST["name"]) ? $_POST["name"] : null;
 	$psw = isset($_POST["psw"]) ? $_POST["psw"] : null;
@@ -97,3 +98,5 @@ function createUser()
 	$db = null;
 	return true;
 }
+
+*/

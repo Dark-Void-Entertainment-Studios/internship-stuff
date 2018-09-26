@@ -5,7 +5,7 @@ Center the contents of the page.
 */
 body {
 	margin: 0 auto;
-	width: 50%;
+	width: 60%;
 }
 /*
 Set common typography.
@@ -83,4 +83,10 @@ form label {
 }
 form input[type=submit]:only-child {
 	margin-left: 100px;     /* place submit button underneath fields */
+}
+td{
+	padding-right: 30px;
+}
+th{
+	padding-right: 20px;
 }
