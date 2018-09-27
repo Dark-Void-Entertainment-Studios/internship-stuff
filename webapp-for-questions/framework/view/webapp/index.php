@@ -31,3 +31,5 @@ foreach ($questions as $question) {
 		</tbody>
 	</table>
 	<p><a href="<?= URL ?>webapp/createQuestionPage">new question</a></p>
+
+	<h3><a href="<?= URL ?>webapp/loginPage">login</a></h3>

@@ -55,7 +55,7 @@ function editQuestion($idQ)
 	$status = isset($_POST["status"]) ? $_POST["status"] : null;
 
 	if ($status === null) {
-		return false;
+		return FALSE;
 		exit();
 	}
 
@@ -72,12 +72,12 @@ function editQuestion($idQ)
 	));
 
 	$db = null;
-	return true;
+	return TRUE;
 }
 
 
 //for later. need some research
-/*function login()
+function login()
 {
 	$name = isset($_POST["name"]) ? $_POST["name"] : null;
 	$psw = isset($_POST["psw"]) ? $_POST["psw"] : null;
@@ -87,26 +87,25 @@ function editQuestion($idQ)
 		exit();
 	}
 
-	$sql = $this->db->query("SELECT * FROM `webapp` WHERE student_name = :name? AND student_password = :psw? LIMIT 1");
+	$sql ="SELECT * FROM `students` WHERE `student_name` = :name AND `student_password` = :psw LIMIT 1";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":student_name?" => $name,
-		":psw?" => $psw
+		":name" => $name,
+		":psw" => $psw
 	));
 
-	$row = mysql_fetch_assoc($result);
+	$check = $query->fetch();
 
-	if ($row["student_password"]==$psw && $row["student_name"]==$name) {
-	session_start();
-	$_SESSION['student_name']= $name;
-	$_SESSION['student_id']= $name;
-	$_SESSION['password']= $psw;
+	if ($check["student_password"]===$psw && $check["student_name"]===$name) {
+		return TRUE;
 	} else {
-		return FALSE;
+		return $check;
 	}
-}
 
+	$db = null;
+}
+/*
 function createUser()
 {	
 	$nameErr ="";
@@ -118,13 +117,13 @@ function createUser()
 	$pwd = isset($_POST["pwd"]) ? $_POST["pwd"] : null;
 	
 	if ($person === null || $pwd === null) {
-		return false;
+		return FALSE;
 		exit();
 	}
 
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM `webapp` WHERE `student_name`=`:person`";
+	$sql = "SELECT * FROM `students` WHERE `student_name`=`:person`";
 	
 	$query = $db->prepare($sql);
 	$query->execute(array(
@@ -133,16 +132,13 @@ function createUser()
 
 	$query->fetchAll();
 	if ($query == $person) {
-		return false;
+		return FALSE;
 		exit();
 	}
 
 
 
-
-
-
-	$sql = "INSERT INTO `webapp` (`person`, `pwd`) 
+	$sql = "INSERT INTO `students` (`person`, `pwd`) 
 	VALUES (:person, :pwd)";
 
 	$query = $db->prepare($sql);
@@ -152,7 +148,8 @@ function createUser()
 	));
 
 	$db = null;
-	return true;
+
+	return TRUE;
 }
 
 */
