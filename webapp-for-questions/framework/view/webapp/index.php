@@ -2,7 +2,7 @@
 session_start()
 ?>
 
-<h2>so many questions</h2>
+<h2 id="questions_main">so many questions</h2>  <!--added questions_main id to differentiate this h2 -->
 	<table id="myTable">
 		<thead>
 			<tr>

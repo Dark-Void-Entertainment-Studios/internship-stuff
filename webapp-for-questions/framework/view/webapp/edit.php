@@ -10,5 +10,5 @@
 	<option value="<?= $progress["progress_id"] ?>"><?= $progress["status"] ?></option>
 <?php } ?>
 	</select><br>
-	<input type="submit" value="edit">
+	<input id="confirm_edit" type="submit" value="edit"> <!-- changed name to confirm for now and added id--> 
 </form>
