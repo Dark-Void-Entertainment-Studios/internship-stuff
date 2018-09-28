@@ -7,7 +7,7 @@ function generateQuestions()
 	$sql = "SELECT * FROM `questions`
 		JOIN `students` ON `questions`.`student_id` = `students`.`student_id`
 		JOIN `progress` ON `questions`.`progress_id` = `progress`.`progress_id`
-		ORDER BY `questions`.`time_stamp` DESC";
+		ORDER BY `questions`.`time_stamp` ASC";
 	$query = $db->prepare($sql);
 	$query->execute();
 
@@ -55,10 +55,26 @@ function createQuestion()
 	$id = isset($_POST["student_id"]) ? $_POST["student_id"] : null;
 	$question = isset($_POST["question"]) ? $_POST["question"] : null;
 
+	if ($id === null || $question === null) {
+		return FALSE;
+		exit();
+	}
+
 	$db = openDatabaseConnection();
 
-	$sql ="INSERT INTO `questions`(`student_id`, `question_text`) VALUES ";
+	$sql ="INSERT INTO `questions`(`student_id`, `question_text`, `progress_id`) 
+	VALUES (:id, :question, 1)";
 
+
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		":id" => $id,
+		":question" => $question
+	));
+
+	$db = null;
+
+	return TRUE;
 }
 
 function editQuestion($idQ)
@@ -109,11 +125,12 @@ function login()
 	$check = $query->fetch();
 
 	if ($check["student_password"]===$pwd && $check["student_name"]===$name) {
+		$db = null;
 		return $check;
 	} else {
+		$db = null;
 		return FALSE;
 	}
-	$db = null;
 }
 
 //not working yet DX

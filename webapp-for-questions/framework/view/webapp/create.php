@@ -4,7 +4,7 @@ session_start();
 	$id = $_SESSION['student_id'];
 ?>
 <h1>what is your question?</h1>
-<form action="<?= URL ?>webapp/questionConfirm>" method='POST'>
+<form action="<?= URL ?>webapp/questionConfirm" method='POST'>
 	<input type="hidden" value="<?= $id ?>" name="student_id">
 	<p>student name</p>
 	<input readonly value="<?= $name ?>" >

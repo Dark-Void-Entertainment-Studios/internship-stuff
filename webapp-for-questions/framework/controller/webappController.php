@@ -61,6 +61,7 @@ function loginConfirm()
 		$_SESSION['student_name']= $result["student_name"];
 		$_SESSION['student_id']= $result["student_id"];
 		$_SESSION['password']= $result["student_password"];
+		$_SESSION['power_lvl']= $result["power_lvl"];
 		header("location:" . URL . "webapp/index");
 	} else {
 		//$result = login();
