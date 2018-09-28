@@ -1,5 +1,9 @@
 <?php 
-session_start()
+session_start();
+if (!$_SESSION['student_name'] == null) { ?>
+	<p>you are logged in as <?= $_SESSION['student_name'] ?></p>
+<?php
+}
 ?>
 
 <h2 id="questions_main">so many questions</h2>  <!--added questions_main id to differentiate this h2 -->
@@ -32,4 +36,9 @@ foreach ($questions as $question) {
 	</table>
 	<p><a href="<?= URL ?>webapp/createQuestionPage">new question</a></p>
 
+	<?php 
+if (!$_SESSION['student_name'] == null) { ?>
 	<h3><a href="<?= URL ?>webapp/loginPage">login</a></h3>
+<?php 
+}
+?>

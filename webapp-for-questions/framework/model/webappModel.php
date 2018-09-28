@@ -50,6 +50,17 @@ function getProgress()
 	return $query->fetchAll();
 }
 
+function createQuestion()
+{
+	$id = isset($_POST["student_id"]) ? $_POST["student_id"] : null;
+	$question = isset($_POST["question"]) ? $_POST["question"] : null;
+
+	$db = openDatabaseConnection();
+
+	$sql ="INSERT INTO `questions`(`student_id`, `question_text`) VALUES ";
+
+}
+
 function editQuestion($idQ)
 {
 	$status = isset($_POST["status"]) ? $_POST["status"] : null;
@@ -75,41 +86,42 @@ function editQuestion($idQ)
 	return TRUE;
 }
 
-
-//for later. need some research
 function login()
 {
 	$name = isset($_POST["name"]) ? $_POST["name"] : null;
-	$psw = isset($_POST["psw"]) ? $_POST["psw"] : null;
+	$pwd = isset($_POST["pwd"]) ? $_POST["pwd"] : null;
 
-	if ($name === null || $psw === null) {
+	if ($name === null || $pwd === null) {
 		return FALSE;
 		exit();
 	}
 
-	$sql ="SELECT * FROM `students` WHERE `student_name` = :name AND `student_password` = :psw LIMIT 1";
+	$db = openDatabaseConnection();
+
+	$sql ="SELECT * FROM `students` WHERE `student_name` = :name AND `student_password` = :pwd LIMIT 1";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		":name" => $name,
-		":psw" => $psw
+		":pwd" => $pwd
 	));
 
 	$check = $query->fetch();
 
-	if ($check["student_password"]===$psw && $check["student_name"]===$name) {
-		return TRUE;
-	} else {
+	if ($check["student_password"]===$pwd && $check["student_name"]===$name) {
 		return $check;
+	} else {
+		return FALSE;
 	}
-
 	$db = null;
 }
+
+//not working yet DX
+//for later. need some research
 /*
 function createUser()
 {	
 	$nameErr ="";
-	$name = ucwords($_POST["name"]);
 	if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
 		$nameErr = "Only letters and white space allowed"; 
 	}

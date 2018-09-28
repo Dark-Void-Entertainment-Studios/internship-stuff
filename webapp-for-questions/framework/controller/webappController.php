@@ -16,9 +16,15 @@ function createQuestionPage()
 	render("webapp/create"	);
 }
 
-function createQuestion()
+function questionConfirm()
 {
-	
+	if (createQuestion()) {
+		header("location:" . URL . "webapp/index");
+		exit();
+	} else {
+		header("location:" . URL . "error/error_db");
+		exit();	
+	}
 }
 
 function editQuestionPage($idQ)
@@ -49,18 +55,18 @@ function loginpage()
 
 function loginConfirm()
 {
-	var_dump($_POST);
-
 	if (login()) {
+		$result = login();
 		session_start();
 		$_SESSION['student_name']= $result["student_name"];
 		$_SESSION['student_id']= $result["student_id"];
 		$_SESSION['password']= $result["student_password"];
-		echo"<p>it worked</p>";
+		header("location:" . URL . "webapp/index");
 	} else {
-		var_dump($check);
-		//header("location:" . URL . "error/error_db");
-		//exit();
+		//$result = login();
+		//var_dump($result);
+		header("location:" . URL . "error/error_db");
+		exit();
 	}
 }
 
