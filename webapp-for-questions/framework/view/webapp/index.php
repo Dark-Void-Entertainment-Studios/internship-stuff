@@ -34,11 +34,11 @@ foreach ($questions as $question) {
 ?>
 		</tbody>
 	</table>
-	<p><a href="<?= URL ?>webapp/createQuestionPage">new question</a></p>
-
 	<?php 
 if (!$_SESSION['student_name'] == null) { ?>
-	<h3><a href="<?= URL ?>webapp/loginPage">login</a></h3>
+	<p><a href="<?= URL ?>webapp/createQuestionPage">new question</a></p>
 <?php 
 }
 ?>
+	
+	<h3><a href="<?= URL ?>webapp/loginPage">login</a></h3>
