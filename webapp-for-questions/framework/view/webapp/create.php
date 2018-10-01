@@ -8,10 +8,10 @@ session_start();
 
 	<input type="hidden" value="<?= $id ?>" name="student_id">
 	<p>student name</p>
-	<input readonly value="<?= $name ?>" >
+	<input readonly value="<?= $name ?>">
 
 	<p>question</p>
-	<textarea autofocus required minlength="2" name="question" rows="10" cols="75" placeholder="type question here"></textarea>
+	<textarea autofocus required minlength="10" name="question" rows="10" cols="75" placeholder="type question here"></textarea>
 	<br>
 	<input type="submit" value="send question">
 </form>

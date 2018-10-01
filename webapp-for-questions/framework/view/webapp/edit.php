@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <form action="<?= URL ?>webapp/editQuestionConfirm/<?= $question["question_id"]; ?>" method='POST'>
 	<h3>student name</h3>
 	<p><?= $question["student_name"]; ?></p>
@@ -10,5 +13,6 @@
 	<option value="<?= $progress["progress_id"] ?>"><?= $progress["status"] ?></option>
 <?php } ?>
 	</select><br>
+	<input type="hidden" name="lvl" value="<?= $_SESSION['power_lvl'] ?>">
 	<input id="confirm_edit" type="submit" value="edit"> <!-- changed name to confirm for now and added id--> 
 </form>

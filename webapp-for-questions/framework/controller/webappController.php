@@ -9,11 +9,13 @@ function index()
 	render("webapp/index", array(
 		'questions' => $allQuestions)
 	);
+	exit();
 }
 
 function createQuestionPage()
 {
 	render("webapp/create"	);
+	exit();
 }
 
 function questionConfirm()
@@ -35,6 +37,7 @@ function editQuestionPage($idQ)
 		'question' => $question,
 		'progress' => $progress
     ));
+	exit();
 }
 
 function editQuestionConfirm($idQ)
@@ -51,6 +54,7 @@ function editQuestionConfirm($idQ)
 function loginPage()
 {
 	render("webapp/login");
+	exit();
 }
 
 function loginConfirm()
@@ -63,6 +67,7 @@ function loginConfirm()
 		$_SESSION['password']= $result["student_password"];
 		$_SESSION['power_lvl']= $result["power_lvl"];
 		header("location:" . URL . "webapp/index");
+		exit();
 	} else {
 		//$result = login();
 		//var_dump($result);
@@ -74,6 +79,7 @@ function loginConfirm()
 function signUpPage()
 {
 	render("webapp/signup");
+	exit();
 }
 
 function signUpConfirm()
@@ -85,13 +91,10 @@ function signUpConfirm()
 		//var_dump($_POST);
 		//$result = createUser();
 		//var_dump($result);
-		//echo "<p>something went wrong</p>";
 		header("location:" . URL . "error/error_db");
 		exit();	
 	}
 }
-//for later	
-
 
 function logout()
 {

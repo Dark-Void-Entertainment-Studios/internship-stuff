@@ -1,12 +1,12 @@
 <h2>Sign up</h2>
 <form action="<?= URL ?>webapp/signUpConfirm" method="POST">
 	<p>student name:</p>
-	<input autofocus type="text" placeholder="Enter Username" required name="name"><br>
+	<input autofocus type="text" minlength="3" placeholder="Enter Username" required name="name"><br>
 	
 	<p>Password:</p>
-	<input type="password" placeholder="Enter Password" required name="pwd"><br>
+	<input type="password" minlength="4" placeholder="Enter Password" required name="pwd"><br>
 	
 	<p>Confirm password:</p>
-	<input type="password" placeholder="confirm Password" name="confirm-psw" required><br>
+	<input type="password" minlength="4" placeholder="confirm Password" name="confirm-psw" required><br>
 	<button type="submit" name="submit" >Sign up</button>
 </form>

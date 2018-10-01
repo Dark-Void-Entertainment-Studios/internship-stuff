@@ -5,8 +5,8 @@ if (!$_SESSION['student_name'] == null) { ?>
 <?php
 }
 ?>
-
-<h2 id="questions_main">so many questions</h2>  <!--added questions_main id to differentiate this h2 -->
+<!--added questions_main id to differentiate this h2 -->
+<h2 id="questions_main">so many questions</h2>
 <table id="myTable">
 	<thead>
 		<tr>

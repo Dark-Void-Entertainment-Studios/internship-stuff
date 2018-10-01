@@ -1,5 +1,5 @@
 <?php
-//working on
+//gets all the questions from the DB
 function generateQuestions()
 {
 	$db = openDatabaseConnection();
@@ -15,7 +15,7 @@ function generateQuestions()
 
 	return $query->fetchAll();
 }
-
+//gets 1 question from the DB to edit
 function getQuestion($idQ)
 {
 	$db = openDatabaseConnection();
@@ -34,7 +34,7 @@ function getQuestion($idQ)
 
 	return $query->fetch();
 }
-
+//gets the info from progress out of the DB for edit
 function getProgress()
 {
 	$db = openDatabaseConnection();
@@ -49,7 +49,7 @@ function getProgress()
 
 	return $query->fetchAll();
 }
-
+//creates a new question in the DB 
 function createQuestion()
 {
 	$id = isset($_POST["student_id"]) ? $_POST["student_id"] : null;
@@ -76,10 +76,17 @@ function createQuestion()
 
 	return TRUE;
 }
-
+//edits a question if you have the power
 function editQuestion($idQ)
 {
 	$status = isset($_POST["status"]) ? $_POST["status"] : null;
+	$lvl = isset($_POST["lvl"]) ? $_POST["lvl"] : null;
+
+	//if you have the right power
+	if ($lvl !== 1) {
+		return FALSE;
+		exit();
+	}
 
 	if ($status === null) {
 		return FALSE;
@@ -101,7 +108,7 @@ function editQuestion($idQ)
 	$db = null;
 	return TRUE;
 }
-
+//login as a user from the DB
 function login()
 {
 	$name = isset($_POST["name"]) ? $_POST["name"] : null;
@@ -123,16 +130,18 @@ function login()
 	));
 
 	$check = $query->fetch();
-
+	//check if password and username match with the user input
 	if ($check["student_password"]===$pwd && $check["student_name"]===$name) {
 		$db = null;
 		return $check;
+		exit();
 	} else {
 		$db = null;
 		return FALSE;
+		exit();
 	}
 }
-
+//creates a new user in the DB
 function createUser()
 {	
 	$person = isset($_POST["name"]) ? $_POST["name"] : null;
@@ -143,12 +152,12 @@ function createUser()
 		return FALSE;
 		exit();
 	}
-
+	//check if the given passwords match 
 	if ($pwd !== $pwd2) {
 		return FALSE;
 		exit();
 	}
-
+	//checks if you are using only the allowed characters
 	if (!preg_match("/^[a-zA-Z ]*$/",$person)) {
 		return FALSE;
 		exit(); 
@@ -162,7 +171,7 @@ function createUser()
 	$query->execute(array(
 		":person" => $person
 	));
-
+	//checks if the name is already in the DB
 	$check = $query->fetch();
 	if ($check == FALSE) {
 		$check = "student_name";
@@ -185,6 +194,3 @@ function createUser()
 
 	return TRUE;
 }
-
-//not working yet DX
-//for later. need some research
