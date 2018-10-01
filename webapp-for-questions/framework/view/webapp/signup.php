@@ -1,6 +1,3 @@
-<?php 
-
-?>
 <h2>Sign up</h2>
 <form action="<?= URL ?>webapp/signUpConfirm" method="POST">
 	<p>student name:</p>
