@@ -133,42 +133,47 @@ function login()
 	}
 }
 
-//not working yet DX
-//for later. need some research
-/*
 function createUser()
 {	
-	$nameErr ="";
-	if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-		$nameErr = "Only letters and white space allowed"; 
-	}
-	$person = isset($name) ? $name : null;
+	$person = isset($_POST["name"]) ? $_POST["name"] : null;
 	$pwd = isset($_POST["pwd"]) ? $_POST["pwd"] : null;
-	
-	if ($person === null || $pwd === null) {
+	$pwd2 = isset($_POST["confirm-psw"]) ? $_POST["confirm-psw"] : null;
+
+	if ($person === null || $pwd === null || $pwd2 === null) {
 		return FALSE;
 		exit();
 	}
 
+	if ($pwd !== $pwd2) {
+		return FALSE;
+		exit();
+	}
+
+	if (!preg_match("/^[a-zA-Z ]*$/",$person)) {
+		return FALSE;
+		exit(); 
+	}
+
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM `students` WHERE `student_name`=`:person`";
+	$sql = "SELECT * FROM `students` WHERE `student_name` = :person LIMIT 1";
 	
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		":person" => $person
 	));
 
-	$query->fetchAll();
-	if ($query == $person) {
+	$check = $query->fetch();
+	if ($check == FALSE) {
+		$check = "student_name";
+	} elseif ($check["student_name"] == $person) {
 		return FALSE;
+		$db = null;
 		exit();
 	}
 
-
-
-	$sql = "INSERT INTO `students` (`person`, `pwd`) 
-	VALUES (:person, :pwd)";
+	$sql = "INSERT INTO `students` (`student_name`, `student_password`, `power_lvl`) 
+	VALUES (:person, :pwd, 0)";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
@@ -181,4 +186,5 @@ function createUser()
 	return TRUE;
 }
 
-*/
+//not working yet DX
+//for later. need some research
