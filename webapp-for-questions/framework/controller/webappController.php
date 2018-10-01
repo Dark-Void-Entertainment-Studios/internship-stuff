@@ -48,7 +48,7 @@ function editQuestionConfirm($idQ)
 	}
 }
 
-function loginpage()
+function loginPage()
 {
 	render("webapp/login");
 }
@@ -71,13 +71,33 @@ function loginConfirm()
 	}
 }
 
-//for later	
-/*function sign_up()
+function signUpPage()
 {
-
-
-
+	render("webapp/signup");
 }
-*/
+
+function signUpConfirm()
+{
+	if (createUser()) {
+		header("location:" . URL . "webapp/index");
+		exit();
+	} else {
+		//var_dump($_POST);
+		//$result = createUser();
+		//var_dump($result);
+		//echo "<p>something went wrong</p>";
+		header("location:" . URL . "error/error_db");
+		exit();	
+	}
+}
+//for later	
 
 
+function logout()
+{
+	session_start();
+	setcookie();
+	session_destroy();
+	header("location:" . URL . "webapp/index");
+	exit();
+}
