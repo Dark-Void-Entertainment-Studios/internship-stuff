@@ -1,0 +1,220 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+/*
+Center the contents of the page.
+*/
+body {
+	margin: 0 auto;
+	width: 60%;
+	background-image: url('test_background');
+}
+/*
+Set common typography.
+The preferred font is Open Sans, which is a Google Web Font, so it should be available everywhere. If it isn't, Verdana is the backup font, but only for body text, because it doesn't look good in headers.
+*/
+body {
+	font-family: Open Sans, Verdana, sans-serif;
+	font-size: 12pt;
+}
+h1 {
+	font-family: Open Sans Condensed, sans-serif;
+	font-weight: normal;
+	font-size: 24pt;
+	color: #666;
+}
+h2 {
+	font-family: Open Sans Condensed, sans-serif;
+	font-weight: normal;
+	font-size: 35px;
+	color: #069;
+	margin-bottom: 0;
+}
+/*
+Position the month names, day numbers, and person names.
+The day numbers are on the left with a list of person names to the right of them.
+*/
+h1 {
+	text-transform: capitalize;
+	margin: 0;
+	border-bottom: 1px dotted grey;
+}
+h2 {
+	margin: 0;
+}
+h2 ~ p {    /* only applies to p-elements on the main page */
+	margin: 0;
+	position: relative;
+	top: -40px;     /* move person names to line up with the day number */
+	left: 50px;     /* make sure the person names don't overlap the day number */
+}
+p:last-of-type {    /* the last p-element should act like a normal paragraph since it's not a person name */
+	position: static;
+}
+/*
+Set hyperlink styles.
+*/
+a {
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a + a {     /* delete links */
+	color: red;
+	font-size: 100%;
+	vertical-align: super;
+}
+p:last-of-type a {  /* the add link */
+	display: block;     /* we can't center the parent element, because no all pages need their last paragraph centered */
+	text-align: center;
+	margin-bottom: 20px;
+	color: darkgrey;
+    overflow: hidden;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+    position: relative;
+    z-index: 2;
+
+}
+/*
+Set the style of forms.
+Labels are in a column to the left, with input fields to the right and spanning the entire remaining width.
+*/
+form p {
+	margin: 5px 0;
+} 
+form label {
+	display: inline-block;
+	width: 100px;
+}
+form input[type=submit]:only-child {
+	margin-left: 100px;     /* place submit button underneath fields */
+}
+td{
+	padding-right: 30px;
+}
+th{
+	padding-right: 20px;
+}
+#questions_main {
+	color: #52ac8b;
+	text-align: center;
+}
+.edit_header {
+}
+
+#confirm_edit {
+	margin-top: 10px;
+}
+
+
+/* login buttons */
+* {box-sizing:border-box;}
+
+.container {
+	font-family: "roboto";
+	width: 600px;
+	display: block;
+	background:FF00F;
+	padding: 10px 50px 50px;
+}
+.container>h2 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+label {
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition:0.2s ease all;
+}
+input:focus ~ label,
+input:valid ~ label {
+	top: -20px;
+	font-size: 14px;
+	color: #5264AE;
+}
+#login_button {
+	position: absolute;
+	top: 150px;
+	left: 155px;
+}
+.group {
+	position: relative;
+	margin-bottom: 45px;
+}
+input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 1px solid #757575;
+}
+input:focus {
+	outline: none;
+}
+.bar {
+	position:relative;
+	display: block; width: 300px;
+}
+.bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background:#5264AE;
+	transition:0.2s ease all;
+	-moz-transition:0.2s ease all;
+	-webkit-transition:0.2s ease all;
+}
+.bar:before {
+	left: 50%
+}
+.bar:after{
+	right: 50%;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+	width: 50%;
+}
+
+.highlight {
+	position:absolute;
+	height: 60%
+	width:100px;
+	top:25%;
+	left: 0;
+	pointer-events: none:
+	opacity:0.5;
+}
+
+input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
