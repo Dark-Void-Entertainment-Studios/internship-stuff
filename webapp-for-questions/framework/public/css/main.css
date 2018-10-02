@@ -6,7 +6,7 @@ Center the contents of the page.
 body {
 	margin: 0 auto;
 	width: 60%;
-	background-image: url('test_background');
+	background-image: url('bg.png');
 }
 /*
 Set common typography.
