@@ -16,18 +16,18 @@ function generateQuestions()
 	return $query->fetchAll();
 }
 //gets 1 question from the DB to edit
-function getQuestion($idQ)
+function getQuestion($idG)
 {
 	$db = openDatabaseConnection();
 
 	$sql = "SELECT * FROM `questions`
 		JOIN `students` ON `questions`.`student_id` = `students`.`student_id`
 		JOIN `progress` ON `questions`.`progress_id` = `progress`.`progress_id`
-		WHERE question_id = :idQ LIMIT 1";
+		WHERE question_id = :idG LIMIT 1";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":idQ" => $idQ
+		":idG" => $idG
 	));
 
 	$db = null;
@@ -97,7 +97,7 @@ function editQuestion($idQ)
 
 	$sql = "UPDATE `questions` 
 		SET `progress_id`= :status
-		WHERE question_id = :idQ";
+		WHERE `question_id` = :idQ";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
@@ -108,6 +108,56 @@ function editQuestion($idQ)
 	$db = null;
 	return TRUE;
 }
+	/*$status = isset($_POST["status"]) ? $_POST["status"] : null;
+	$name = isset($_POST["name"]) ? $_POST["name"] : null;//'name' => string 'Rens'
+	$id = isset($_POST["id"]) ? $_POST["id"] : null;//'id' => string '1'
+	$lvl = isset($_POST["lvl"]) ? $_POST["lvl"] : null;//'lvl' => string '1'
+	
+	if ($status === null || $lvl === null || $id === null || $name === null) {
+		return FALSE;
+		exit();
+	}
+
+	//check if you have the right power
+	if ($lvl !== 1) {
+		return FALSE;
+		exit();
+	}
+
+	$db = openDatabaseConnection();
+
+	 $sql ="SELECT * FROM `students` WHERE `student_name` = :name AND `student_id` = :id AND `power_lvl` = 1 LIMIT 1";
+
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		":name" => $name,
+		":id" => $id
+	));
+
+	$check = $query->fetch();
+	//check if the user is truly allowed to edit
+	if ($check["student_id"] == $id && $check["student_name"] === $name && $check["power_lvl"] == $lvl) {
+		
+		$sql = "UPDATE `questions` 
+		SET `progress_id`= :status
+		WHERE question_id = :idQ";
+
+		$query = $db->prepare($sql);
+		$query->execute(array(
+			":status" => $status,
+			":idQ" => $idQ
+		));
+
+		$db = null;
+		return TRUE;
+		exit();
+
+	} else {
+
+		$db = null;
+		return $check;
+		exit();
+	}*/
 //login as a user from the DB
 function login()
 {

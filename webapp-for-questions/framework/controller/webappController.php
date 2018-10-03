@@ -29,10 +29,10 @@ function questionConfirm()
 	}
 }
 
-function editQuestionPage($idQ)
+function editQuestionPage($idG)
 {
 	$progress = getProgress();
-	$question = getQuestion($idQ);
+	$question = getQuestion($idG);
 	render("webapp/edit" , array(
 		'question' => $question,
 		'progress' => $progress
@@ -46,7 +46,12 @@ function editQuestionConfirm($idQ)
 		header("location:" . URL . "webapp/index");
 		exit();
 	} else {
-		header("location:" . URL . "error/error_db");
+
+		$result = editQuestion($idQ);
+		var_dump($result);
+		echo "shit happened";
+		var_dump($_POST);
+		//header("location:" . URL . "error/error_db");
 		exit();	
 	}
 }
