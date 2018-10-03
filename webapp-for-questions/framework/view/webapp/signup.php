@@ -1,12 +1,30 @@
+<div class="container">
 <h2>Sign up</h2>
+
+<!-- name register -->
 <form action="<?= URL ?>webapp/signUpConfirm" method="POST">
-	<p>student name:</p>
-	<input autofocus type="text" minlength="3" placeholder="Enter Username" required name="name"><br>
-	
-	<p>Password:</p>
-	<input type="password" minlength="4" placeholder="Enter Password" required name="pwd"><br>
-	
-	<p>Confirm password:</p>
-	<input type="password" minlength="4" placeholder="confirm Password" name="confirm-psw" required><br>
-	<button type="submit" name="submit" >Sign up</button>
+	<div class="group">
+	<input autofocus type="text" minlength="3" required name="name" autocomplete="off"><br>
+	<span class="highlight"></span>
+	<span class="bar"></span>
+	<label> Naam </label>
+</div>
+
+	<!-- enter password -->
+<div class="group">
+	<input type="password" minlength="4" required name="pwd"><br>
+	<span class="highlight"></span>
+	<span class="bar"></span>
+	<label> password</label>
+</div>
+
+	<!-- confirm password -->
+<div class="group">
+	<input type="password" minlength="4" name="confirm-psw" required><br>
+	<span class="highlight"></span>
+	<span class="bar"></span>
+	<label>Bevestig Wachtwoord</label>
+	<button class="Register_button" type="submit" name="submit" >registreer</button>
+</div>
 </form>
+</div>

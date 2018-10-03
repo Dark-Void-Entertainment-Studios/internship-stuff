@@ -16,7 +16,7 @@
 	<span class="highlight"></span>
 	<span class="bar"></span>
 	<label>Wachtwoord</label>
-	<button id="login_button" type="submit" name="submit" required >login</button>
+	<button class="login_button" type="submit" name="submit" required >login</button>
 </div>
 </form>
 </div>

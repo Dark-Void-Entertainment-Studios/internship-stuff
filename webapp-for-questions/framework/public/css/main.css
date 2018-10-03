@@ -90,7 +90,7 @@ h1 {
 	font-size: 24pt;
 	color: #666;
 }
-h2 {
+h2 {	
 	font-family: Open Sans Condensed, sans-serif;
 	font-weight: normal;
 	font-size: 35px;
@@ -206,7 +206,28 @@ input:valid ~ label {
 	font-size: 14px;
 	color: #5264AE;
 }
+.login_button {
+	position: relative;
+    top: 50px;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
 
+.register_button {
+	position: relative;
+    top: 50px;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+
+}
 .group {
 	position: relative;
 	margin-bottom: 45px;
