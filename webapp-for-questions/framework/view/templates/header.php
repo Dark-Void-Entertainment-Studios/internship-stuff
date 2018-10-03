@@ -6,8 +6,8 @@
 	<title>Smartlab</title>	
 	<link rel="stylesheet" href="<?= URL ?>public/css/main.css">
 </head>
+<body>
 	<nav>
-
 		<ul>
 			<li class="left"><a href="<?= URL ?>webapp/index">Home</a></li>
 			<li class="left"><a href="">FAQ</a></li>
@@ -37,8 +37,5 @@
 			<?php
 			}
 			?>
-		
-
 		</ul>
 	</nav>
-<body>
