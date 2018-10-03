@@ -97,7 +97,7 @@ function editQuestion($idQ)
 
 	$sql = "UPDATE `questions` 
 		SET `progress_id`= :status
-		WHERE question_id = :idQ";
+		WHERE `question_id` = :idQ";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
