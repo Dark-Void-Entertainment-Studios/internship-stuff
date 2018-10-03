@@ -46,12 +46,9 @@ function editQuestionConfirm($idQ)
 		header("location:" . URL . "webapp/index");
 		exit();
 	} else {
-
 		//$result = editQuestion($idQ);
 		//var_dump($result);
-		echo "shit happened";
-		var_dump($_POST);
-		//header("location:" . URL . "error/error_db");
+		header("location:" . URL . "error/error_db");
 		exit();	
 	}
 }
