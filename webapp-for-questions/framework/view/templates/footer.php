@@ -1,6 +1,7 @@
 <footer>
-	<p>this website was made by:
-	<br>Rens Gouman, Floris Lans and Bart Kuip</p>
+	<h4>Website created by: Rens Gouman, Floris Lans and Bartkuip</h4>
 </footer>
+
 </body>
+
 </html>
