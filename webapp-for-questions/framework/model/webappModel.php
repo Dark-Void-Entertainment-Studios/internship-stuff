@@ -80,35 +80,6 @@ function createQuestion()
 function editQuestion($idQ)
 {
 	$status = isset($_POST["status"]) ? $_POST["status"] : null;
-	$lvl = isset($_POST["lvl"]) ? $_POST["lvl"] : null;
-
-	//if you have the right power
-	if ($lvl !== 1) {
-		return FALSE;
-		exit();
-	}
-
-	if ($status === null) {
-		return FALSE;
-		exit();
-	}
-
-	$db = openDatabaseConnection();
-
-	$sql = "UPDATE `questions` 
-		SET `progress_id`= :status
-		WHERE `question_id` = :idQ";
-
-	$query = $db->prepare($sql);
-	$query->execute(array(
-		":status" => $status,
-		":idQ" => $idQ
-	));
-
-	$db = null;
-	return TRUE;
-}
-	/*$status = isset($_POST["status"]) ? $_POST["status"] : null;
 	$name = isset($_POST["name"]) ? $_POST["name"] : null;//'name' => string 'Rens'
 	$id = isset($_POST["id"]) ? $_POST["id"] : null;//'id' => string '1'
 	$lvl = isset($_POST["lvl"]) ? $_POST["lvl"] : null;//'lvl' => string '1'
@@ -119,7 +90,7 @@ function editQuestion($idQ)
 	}
 
 	//check if you have the right power
-	if ($lvl !== 1) {
+	if ($lvl != 1) {
 		return FALSE;
 		exit();
 	}
@@ -157,7 +128,8 @@ function editQuestion($idQ)
 		$db = null;
 		return $check;
 		exit();
-	}*/
+	}
+}
 //login as a user from the DB
 function login()
 {

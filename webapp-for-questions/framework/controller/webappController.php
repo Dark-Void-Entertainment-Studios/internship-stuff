@@ -47,8 +47,8 @@ function editQuestionConfirm($idQ)
 		exit();
 	} else {
 
-		$result = editQuestion($idQ);
-		var_dump($result);
+		//$result = editQuestion($idQ);
+		//var_dump($result);
 		echo "shit happened";
 		var_dump($_POST);
 		//header("location:" . URL . "error/error_db");
