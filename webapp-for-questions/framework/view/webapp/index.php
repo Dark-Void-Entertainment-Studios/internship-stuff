@@ -1,7 +1,7 @@
 <?php 
 session_start();
 ?>
-
+<h1>Vraagen</h1>
 <table id="myTable">
 	<thead>
 		<tr>
