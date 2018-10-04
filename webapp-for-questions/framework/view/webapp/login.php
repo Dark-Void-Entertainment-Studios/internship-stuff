@@ -1,22 +1,22 @@
-<div class="container">
+<main class="container">
 <h2>Login</h2> 
 
 <!-- name login bar -->
 <form action="<?= URL ?>webapp/loginConfirm" method="POST">
-	<div class="group">
+	<section class="group">
 	<input type="text" name="name" required >
 	<span class="highlight"></span>
 	<span class="bar"></span>
 	<label>Naam</label>
-	</div>
+	</section>
 
 <!-- password login bar -->
-<div class="group">
+<section class="group">
 	<input type="password" name="pwd" required >
 	<span class="highlight"></span>
 	<span class="bar"></span>
 	<label>Wachtwoord</label>
 	<button class="login_button" type="submit" name="submit" required >login</button>
-</div>
+</section>
 </form>
-</div>
+</main>

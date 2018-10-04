@@ -5,9 +5,9 @@ session_start();
 <table id="myTable">
 	<thead>
 		<tr>
-			<th colspan="1" onclick="sortTable(0)">Student</th>
-			<th colspan="5" onclick="sortTable(1)">Vraag</th>
-			<th colspan="2" onclick="sortTable(2)">Tijd</th>
+			<th colspan="1">Student</th>
+			<th colspan="5">Vraag</th>
+			<th colspan="2">Tijd</th>
 			<th colspan="1">Status</th>
 
 			<?php 
