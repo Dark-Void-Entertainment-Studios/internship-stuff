@@ -2,11 +2,11 @@
 session_start()
 ?>
 <form action="<?= URL ?>webapp/editQuestionConfirm/<?= $question["question_id"]; ?>" method='POST'>
-	<h3>student name</h3>
+	<h3>Naam Student</h3>
 	<p><?= $question["student_name"]; ?></p>
-	<h3>question</h3>
+	<h3>Vraag</h3>
 	<p><?= $question["question_text"]; ?>"</p>
-	<h3>status</h3>
+	<h3>Status</h3>
 
 	<select required name="status">
 <?php foreach ($progress as $progress) { ?>
