@@ -15,6 +15,20 @@ function generateQuestions()
 
 	return $query->fetchAll();
 }
+//gets all the FAQ stuff from the DB
+function getFAQ()
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM `FAQ`";
+
+	$query = $db->prepare($sql);
+	$query->execute();
+
+	$db = null;
+
+	return $query->fetchAll();
+}
 //gets 1 question from the DB to edit
 function getQuestion($idG)
 {

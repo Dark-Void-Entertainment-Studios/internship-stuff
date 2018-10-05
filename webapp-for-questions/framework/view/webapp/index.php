@@ -25,10 +25,10 @@ foreach ($questions as $question) {
 	} else {
 ?>
 		<tr>
-			<td><?= $question["student_name"] ?></td>
+			<td colspan="1"><?= $question["student_name"] ?></td>
 			<td colspan="5"><?= $question["question_text"] ?></td>
 			<td colspan="2"><?= $question["time_stamp"] ?></td>
-			<td><?= $question["status"] ?></td>
+			<td colspan="1"><?= $question["status"] ?></td>
 
 			<?php 
 			if ($_SESSION['power_lvl'] == 1) { ?>

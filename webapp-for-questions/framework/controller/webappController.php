@@ -12,6 +12,16 @@ function index()
 	exit();
 }
 
+function FAQ()
+{
+	$allFAQ = getFAQ();
+
+	render("webapp/FAQ", array(
+		'questions' => $allFAQ)
+);
+	exit();
+}
+
 function createQuestionPage()
 {
 	render("webapp/create"	);

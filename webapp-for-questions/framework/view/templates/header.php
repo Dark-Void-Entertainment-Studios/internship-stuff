@@ -10,7 +10,7 @@
 	<nav>
 		<ul>
 			<li class="left"><a href="<?= URL ?>webapp/index">Home</a></li>
-			<li class="left"><a href="">FAQ</a></li>
+			<li class="left"><a href="<?= URL ?>webapp/FAQ">FAQ</a></li>
 
 
 

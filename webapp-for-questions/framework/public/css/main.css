@@ -3,7 +3,6 @@
 /*
 Center the contents of the page.
 */
-
 body {
 	margin: 0 auto;
 	width: 90%;
@@ -15,22 +14,24 @@ The preferred font is Open Sans, which is a Google Web Font, so it should be ava
 */
 body {
 	font-family: Open Sans, Verdana, sans-serif;
-	font-size: 12pt;
+	font-size: 14pt;
 }
-
 tr{
 
 }
-
+tbody tr:nth-child(odd) {
+    background-color: rgb(51, 153, 255);
+}
+tbody tr:nth-child(even) {
+    background-color: rgb(102, 179, 255);
+}
 td{
 	text-align: center;
-	padding-top: 5px;
+	padding: 10px;
 }
-
 footer{
 	text-align: center;
 }
-
 #login_button{
     position: relative;
     top: 50px;
@@ -41,18 +42,15 @@ footer{
     border: none;
     border-bottom: 1px solid #757575;
 }
-
 #myTable{
 	border: 5px solid white;
 	background-color: rgba(50, 102, 184, 0.42);
 	width: 95%;
 	padding: 0px;
 }
-
 .right{
 	float: right;
 }
-
 .left{
 	float: left;
 }
@@ -62,33 +60,32 @@ footer{
 	margin: 5px;
 	border: 1px solid white;
 }
-
 footer h4{
 	text-align: center;
 	bottom: 0;
 }
-
 nav {
+
 }
 nav li{
 	text-align: center;
 	list-style-type: none;
-    display: inline;
+	padding: 5px;
+	display: inline;
 }
 nav ul{
 	list-style-type: none;
-}	
+}
 nav a{
 	display: block;
 	margin: 5px;
+	padding: 5px;
 	border: 1px solid white;
 }
-
 h1 {
 	font-family: Open Sans Condensed, sans-serif;
 	font-weight: normal;
-	font-size: 24pt;
-	color: #666;
+	font-size: 26pt;
 }
 h2 {	
 	font-family: Open Sans Condensed, sans-serif;
@@ -137,14 +134,9 @@ p:last-of-type a {  /* the add link */
 	display: block;     /* we can't center the parent element, because no all pages need their last paragraph centered */
 	text-align: center;
 	margin-bottom: 20px;
-	color: darkgrey;
-    overflow: hidden;
-    padding-bottom: 1rem;
-    font-size: 1rem;
-    margin-right: 1rem;
-    position: relative;
-    z-index: 2;
-
+	padding-top: 16px;
+	padding-bottom: 16px;
+	font-size: 18px;
 }
 /*
 Set the style of forms.
@@ -160,22 +152,17 @@ form label {
 form input[type=submit]:only-child {
 	margin-left: 100px;     /* place submit button underneath fields */
 }
-
 #questions_main {
 	color: #52ac8b;
 	text-align: center;
 }
 .edit_header {
 }
-
 #confirm_edit {
 	margin-top: 10px;
 }
-
-
 /* login buttons */
 * {box-sizing:border-box;}
-
 .container {
 	font-family: "roboto";
 	width: 600px;
@@ -187,7 +174,6 @@ form input[type=submit]:only-child {
 	text-align: center;
 	margin-bottom: 50px;
 }
-
 label {
 	color: #999;
 	font-size: 18px;
@@ -216,7 +202,6 @@ input:valid ~ label {
     border: none;
     border-bottom: 1px solid #757575;
 }
-
 .register_button {
 	position: relative;
     top: 50px;
@@ -226,7 +211,6 @@ input:valid ~ label {
     width: 300px;
     border: none;
     border-bottom: 1px solid #757575;
-
 }
 .group {
 	position: relative;
@@ -264,12 +248,10 @@ input:focus {
 .bar:after{
 	right: 50%;
 }
-
 input:focus ~ .bar:before,
 input:focus ~ .bar:after {
 	width: 50%;
 }
-
 .highlight {
 	position:absolute;
 	height: 60%
@@ -279,13 +261,11 @@ input:focus ~ .bar:after {
 	pointer-events: none:
 	opacity:0.5;
 }
-
 input:focus ~ .highlight {
     -webkit-animation:inputHighlighter 0.3s ease;
     -moz-animation:inputHighlighter 0.3s ease;
     animation:inputHighlighter 0.3s ease;
 }
-
 @-webkit-keyframes inputHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
