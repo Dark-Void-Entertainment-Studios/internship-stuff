@@ -15,7 +15,7 @@ function generateQuestions()
 
 	return $query->fetchAll();
 }
-//gets all the FAQ stuff from the DB
+//gets all the FAQ from the DB
 function getFAQ()
 {
 	$db = openDatabaseConnection();
@@ -78,7 +78,6 @@ function createQuestion()
 
 	$sql ="INSERT INTO `questions`(`student_id`, `question_text`, `progress_id`) 
 	VALUES (:id, :question, 1)";
-
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
@@ -169,7 +168,12 @@ function login()
 	//check if password and username match with the user input
 	if ($check["student_password"]===$pwd && $check["student_name"]===$name) {
 		$db = null;
-		return $check;
+		session_start();
+		$_SESSION['student_name']= $check["student_name"];
+		$_SESSION['student_id']= $check["student_id"];
+		$_SESSION['password']= $check["student_password"];
+		$_SESSION['power_lvl']= $check["power_lvl"];
+		return TRUE;
 		exit();
 	} else {
 		$db = null;

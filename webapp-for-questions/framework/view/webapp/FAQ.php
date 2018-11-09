@@ -1,5 +1,5 @@
 <?php 
-
+	session_start();
 ?>
 <h1>FAQ</h1>
 <table id="myTable">

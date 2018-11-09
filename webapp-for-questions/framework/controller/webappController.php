@@ -1,7 +1,5 @@
 <?php
-
 require(ROOT . "model/webappModel.php");
-
 function index()
 {
 	$allQuestions = generateQuestions();
@@ -11,7 +9,6 @@ function index()
 	);
 	exit();
 }
-
 function FAQ()
 {
 	$allFAQ = getFAQ();
@@ -21,13 +18,11 @@ function FAQ()
 );
 	exit();
 }
-
 function createQuestionPage()
 {
 	render("webapp/create"	);
 	exit();
 }
-
 function questionConfirm()
 {
 	if (createQuestion()) {
@@ -38,7 +33,6 @@ function questionConfirm()
 		exit();	
 	}
 }
-
 function editQuestionPage($idG)
 {
 	$progress = getProgress();
@@ -49,7 +43,6 @@ function editQuestionPage($idG)
     ));
 	exit();
 }
-
 function editQuestionConfirm($idQ)
 {
 	if (editQuestion($idQ)) {
@@ -62,22 +55,14 @@ function editQuestionConfirm($idQ)
 		exit();	
 	}
 }
-
 function loginPage()
 {
 	render("webapp/login");
 	exit();
 }
-
 function loginConfirm()
 {
 	if (login()) {
-		$result = login();
-		session_start();
-		$_SESSION['student_name']= $result["student_name"];
-		$_SESSION['student_id']= $result["student_id"];
-		$_SESSION['password']= $result["student_password"];
-		$_SESSION['power_lvl']= $result["power_lvl"];
 		header("location:" . URL . "webapp/index");
 		exit();
 	} else {
@@ -87,13 +72,11 @@ function loginConfirm()
 		exit();
 	}
 }
-
 function signUpPage()
 {
 	render("webapp/signup");
 	exit();
 }
-
 function signUpConfirm()
 {
 	if (createUser()) {
@@ -107,7 +90,6 @@ function signUpConfirm()
 		exit();	
 	}
 }
-
 function logout()
 {
 	session_start();
