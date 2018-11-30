@@ -2,7 +2,6 @@
 require(ROOT . "model/webappModel.php");
 function errorPage($error2)
 {
-	//var_dump($error2);
 	render("webapp/error", array(
 		"error" => $error2));
 	exit();
@@ -31,7 +30,6 @@ function createQuestionPage()
 function questionConfirm()
 {
 	$result = createQuestion();
-
 	if ($result[0] == TRUE) {
 		header("location:" . URL . "webapp/index");
 		exit();

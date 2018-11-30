@@ -26,5 +26,3 @@ if ($error == "error_404") {
 } elseif ($error == "error_delete") {
 	echo "<p>no delete for you!</p>";
 }
-
-

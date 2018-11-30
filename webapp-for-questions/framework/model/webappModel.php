@@ -12,7 +12,6 @@ function generateQuestions()
 	$query->execute();
 
 	$db = null;
-
 	return $query->fetchAll();
 }
 //gets all the FAQ from the DB
@@ -26,7 +25,6 @@ function getFAQ()
 	$query->execute();
 
 	$db = null;
-
 	return $query->fetchAll();
 }
 //gets 1 question from the DB to edit
@@ -45,7 +43,6 @@ function getQuestion($idG)
 	));
 
 	$db = null;
-
 	return $query->fetch();
 }
 //gets the info from progress out of the DB for edit
@@ -60,7 +57,6 @@ function getProgress()
 	$query->execute();
 
 	$db = null;
-
 	return $query->fetchAll();
 }
 //creates a new question in the DB 
