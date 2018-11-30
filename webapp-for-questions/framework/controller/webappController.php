@@ -1,12 +1,18 @@
 <?php
 require(ROOT . "model/webappModel.php");
+function errorPage($error2)
+{
+	//var_dump($error2);
+	render("webapp/error", array(
+		"error" => $error2));
+	exit();
+}
 function index()
 {
 	$allQuestions = generateQuestions();
 	
 	render("webapp/index", array(
-		'questions' => $allQuestions)
-	);
+		'questions' => $allQuestions));
 	exit();
 }
 function FAQ()
@@ -14,8 +20,7 @@ function FAQ()
 	$allFAQ = getFAQ();
 
 	render("webapp/FAQ", array(
-		'questions' => $allFAQ)
-);
+		'questions' => $allFAQ));
 	exit();
 }
 function createQuestionPage()
@@ -25,11 +30,14 @@ function createQuestionPage()
 }
 function questionConfirm()
 {
-	if (createQuestion()) {
+	$result = createQuestion();
+
+	if ($result[0] == TRUE) {
 		header("location:" . URL . "webapp/index");
 		exit();
 	} else {
-		header("location:" . URL . "error/error_db");
+		$error1 = $result[1];
+		errorPage($error1);
 		exit();	
 	}
 }
@@ -45,14 +53,14 @@ function editQuestionPage($idG)
 }
 function editQuestionConfirm($idQ)
 {
-	if (editQuestion($idQ)) {
+	$result = editQuestion($idQ);
+	if ($result[0] == TRUE) {
 		header("location:" . URL . "webapp/index");
 		exit();
 	} else {
-		//$result = editQuestion($idQ);
-		//var_dump($result);
-		header("location:" . URL . "error/error_db");
-		exit();	
+		$error1 = $result[1];
+		errorPage($error1);
+		exit();
 	}
 }
 function loginPage()
@@ -62,13 +70,13 @@ function loginPage()
 }
 function loginConfirm()
 {
-	if (login()) {
+	$result = login();
+	if ($result[0] == TRUE) {
 		header("location:" . URL . "webapp/index");
 		exit();
 	} else {
-		//$result = login();
-		//var_dump($result);
-		header("location:" . URL . "error/error_db");
+		$error1 = $result[1];
+		errorPage($error1);
 		exit();
 	}
 }
@@ -79,14 +87,13 @@ function signUpPage()
 }
 function signUpConfirm()
 {
-	if (createUser()) {
+	$result = createUser();
+	if ($result[0] == TRUE) {
 		header("location:" . URL . "webapp/index");
 		exit();
 	} else {
-		//var_dump($_POST);
-		//$result = createUser();
-		//var_dump($result);
-		header("location:" . URL . "error/error_db");
+		$error1 = $result[1];
+		errorPage($error1);
 		exit();	
 	}
 }

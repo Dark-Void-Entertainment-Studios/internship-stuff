@@ -70,7 +70,8 @@ function createQuestion()
 	$question = isset($_POST["question"]) ? $_POST["question"] : null;
 
 	if ($id === null || $question === null) {
-		return FALSE;
+		$error = "error_blanks";
+		return array(FALSE, $error);
 		exit();
 	}
 
@@ -86,25 +87,27 @@ function createQuestion()
 	));
 
 	$db = null;
-
-	return TRUE;
+	return array(TRUE);
+	exit();
 }
 //edits a question if you have the power
 function editQuestion($idQ)
 {
-	$status = isset($_POST["status"]) ? $_POST["status"] : null;
-	$name = isset($_POST["name"]) ? $_POST["name"] : null;//'name' => string 'Rens'
-	$id = isset($_POST["id"]) ? $_POST["id"] : null;//'id' => string '1'
-	$lvl = isset($_POST["lvl"]) ? $_POST["lvl"] : null;//'lvl' => string '1'
+	$status = isset($_POST["status"]) ? $_POST["status"] : null;	
+	$name = isset($_POST["name"]) ? $_POST["name"] : null;	//'name' => string 'Rens'
+	$id = isset($_POST["id"]) ? $_POST["id"] : null;					//'id' => string '1'
+	$lvl = isset($_POST["lvl"]) ? $_POST["lvl"] : null;				//'lvl' => string '1'
 	
 	if ($status === null || $lvl === null || $id === null || $name === null) {
-		return FALSE;
+		$error = "error_blanks";
+		return array(FALSE, $error);
 		exit();
 	}
 
 	//check if you have the right power
 	if ($lvl != 1) {
-		return FALSE;
+		$error = "error_powerLVL";
+		return array(FALSE, $error);
 		exit();
 	}
 
@@ -133,24 +136,31 @@ function editQuestion($idQ)
 		));
 
 		$db = null;
-		return TRUE;
+		return array(TRUE);
 		exit();
 
 	} else {
 
 		$db = null;
-		return $check;
+		$error = "error_db";
+		return array(FALSE, $error);
 		exit();
 	}
 }
 //login as a user from the DB
 function login()
 {
+	if (empty($_POST["name"]) || empty($_POST["pwd"])) {
+		$error = "error_blanks";
+		return array(FALSE, $error);
+		exit();
+	}
 	$name = isset($_POST["name"]) ? $_POST["name"] : null;
 	$pwd = isset($_POST["pwd"]) ? $_POST["pwd"] : null;
 
 	if ($name === null || $pwd === null) {
-		return FALSE;
+		$error = "error_blanks";
+		return array(FALSE, $error);
 		exit();
 	}
 
@@ -173,34 +183,44 @@ function login()
 		$_SESSION['student_id']= $check["student_id"];
 		$_SESSION['password']= $check["student_password"];
 		$_SESSION['power_lvl']= $check["power_lvl"];
-		return TRUE;
+		return array(TRUE);
 		exit();
 	} else {
 		$db = null;
-		return FALSE;
+		$error = "error_db";
+		return array(FALSE, $error);
 		exit();
 	}
 }
 //creates a new user in the DB
 function createUser()
 {	
+	if (empty($_POST["name"]) || empty($_POST["pwd"]) || empty($_POST["confirm-psw"])) {
+		$error = "error_blanks";
+		return array(FALSE, $error);
+		exit();
+	}
+
 	$person = isset($_POST["name"]) ? $_POST["name"] : null;
 	$pwd = isset($_POST["pwd"]) ? $_POST["pwd"] : null;
 	$pwd2 = isset($_POST["confirm-psw"]) ? $_POST["confirm-psw"] : null;
 
 	if ($person === null || $pwd === null || $pwd2 === null) {
-		return FALSE;
+		$error = "error_blanks";
+		return array(FALSE, $error);
 		exit();
 	}
 	//check if the given passwords match 
 	if ($pwd !== $pwd2) {
-		return FALSE;
+		$error = "error_password_missmatch";
+		return array(FALSE, $error);
 		exit();
 	}
-	//checks if you are using only the allowed characters
+	// check if name only contains letters and whitespace
 	if (!preg_match("/^[a-zA-Z ]*$/",$person)) {
-		return FALSE;
-		exit(); 
+		$error = "error_wrong_characters";
+		return array(FALSE, $error);
+		exit();
 	}
 
 	$db = openDatabaseConnection();
@@ -216,7 +236,8 @@ function createUser()
 	if ($check == FALSE) {
 		$check = "student_name";
 	} elseif ($check["student_name"] == $person) {
-		return FALSE;
+		$error = "error_name_already_exists";
+		return array(FALSE, $error);
 		$db = null;
 		exit();
 	}
@@ -231,6 +252,5 @@ function createUser()
 	));
 
 	$db = null;
-
-	return TRUE;
+	return array(TRUE);
 }
