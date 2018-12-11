@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Smartlab</title>	
 	<link rel="stylesheet" href="<?= URL ?>public/css/main.css">
+	<link rel="icon" href="<?= URL ?>public/img/Questionmark.svg" sizes="any" type="image/svg+xml">
 </head>
 <body>
 	<nav>
