@@ -1,0 +1,71 @@
+Eclipse is een alternatief voor het Arduino IDE. het is wat ingewikkelder om op te zetten,
+maar het bied meer opties van mensen die geen liefhebber zijn van de functionaliteit waar
+het Arduino IDE mee komt.
+
+deze handleiding is voor het installeren en opzetten van het Eclipse IDE
+
+-----------------------------------------------------------------------------------------
+W A R N I N G
+
+
+deze editor is volledig in het engels. als je hier moeite mee hebt, raad ik Eclipse ten
+zeerste af. 
+-----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+stap 1: installatie IDE
+ 
+ga naar https://www.eclipse.org en klik op download (rechtsbovenin)
+
+klik op download 64 bit (get Eclipse IDE 2018-09) klik yes op alles tijdens de installatie
+-----------------------------------------------------------------------------------------
+stap 2: installatie arduino pakket
+ 
+het IDE opent op de Welcome page
+
+klik op de help tab, en klik  op eclipse download manager
+
+je krijgt een scherm te zien, met nul geinstalleerde packages. het package dat we nodig 
+hebben is "Arduino AVR Boards". 
+
+klik op Add, selecteer het package "Arduino AVR Boards" en klik op OK.
+--------------------------------------------------------------------------------------
+stap 3: Arduino project opzetten 
+
+ga naar de file tab rechtsbovenin, naar new, en arduino project. 
+
+in het scherm. dubbelklik op "arduino C++ Sketch.
+
+bij"preject name" geef je je sketch een naam, 
+de rest van de instellingen zijn onbelangrijk. 
+
+klik op finish.
+
+sluit de welcome tab. (de welcome tab krijg je standaard te zien als je het IDE opent, 
+je kan het aangeven als je dat niet wilt).  
+
+je krijgt nu een basis arduino sketch te zien, je kan hier alleen nog niets mee. 
+--------------------------------------------------------------------------------
+stap 4: instellingen en bouwen
+
+
+
+setup terminal 
+
+make program 
+
+click build (hammer symbol)
+
+click launch (play symbol)
+
+
+
+
+
+
+
+eclipse website 
+download IDE
+eclipse IDE c/c++
+download arduino
+config arduino 
