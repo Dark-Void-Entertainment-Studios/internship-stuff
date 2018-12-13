@@ -3,7 +3,7 @@ session_start();
 	$name = $_SESSION['student_name'];
 	$id = $_SESSION['student_id'];
 ?>
-<h1>wat is je vraag?</h1>
+<h1>Wat is je vraag?</h1>
 <form action="<?= URL ?>webapp/questionConfirm" method="POST">
 
 	<input type="hidden" value="<?= $id ?>" name="student_id">
@@ -11,7 +11,7 @@ session_start();
 	<input readonly value="<?= $name ?>">
 
 	<p>Vraag</p>
-	<textarea autofocus required minlength="10" name="question" rows="10" cols="75" placeholder="type je vraag hier"></textarea>
+	<textarea autofocus required minlength="10" name="question" rows="10" cols="75" placeholder="Type je vraag hier"></textarea>
 	<br>
-	<input type="submit" value="vraag op sturen">
+	<input type="submit" value="Vraag op sturen">
 </form>

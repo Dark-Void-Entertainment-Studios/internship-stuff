@@ -1,5 +1,5 @@
 <main class="container">
-<h2>registreer</h2>
+<h2>Registreer</h2>
 
 <!-- name register -->
 <form action="<?= URL ?>webapp/signUpConfirm" method="POST">
