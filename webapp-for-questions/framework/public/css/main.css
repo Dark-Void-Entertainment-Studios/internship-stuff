@@ -20,10 +20,10 @@ tr{
 
 }
 tbody tr:nth-child(odd) {
-    background-color: rgb(51, 153, 255);
+	background-color: rgb(51, 153, 255);
 }
 tbody tr:nth-child(even) {
-    background-color: rgb(102, 179, 255);
+	background-color: rgb(102, 179, 255);
 }
 td{
 	text-align: center;
@@ -33,14 +33,14 @@ footer{
 	text-align: center;
 }
 #login_button{
-    position: relative;
-    top: 50px;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 300px;
-    border: none;
-    border-bottom: 1px solid #757575;
+	position: relative;
+	top: 50px;
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 1px solid #757575;
 }
 #myTable{
 	border: 5px solid white;
@@ -205,33 +205,33 @@ input:valid ~ label {
 }
 .login_button {
 	position: relative;
-    top: 50px;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 300px;
-    border: none;
-    border-bottom: 1px solid #757575;
+	top: 50px;
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 1px solid #757575;
 }
 .register_button {
 	position: relative;
-    top: 50px;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 300px;
-    border: none;
-    border-bottom: 1px solid #757575;
+	top: 50px;
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 1px solid #757575;
 }
 .group {
 	position: relative;
 	margin-bottom: 45px;
 }
 input {
-	font-size: 18px;
+	font-size: 20px;
 	padding: 10px 10px 10px 5px;
 	display: block;
-	width: 300px;
+	width: 400px;
 	border: none;
 	border-bottom: 1px solid #757575;
 }
@@ -240,7 +240,7 @@ input:focus {
 }
 .bar {
 	position:relative;
-	display: block; width: 300px;
+	display: block; width: 400px;
 }
 .bar:before, .bar:after {
 	content: '';
@@ -266,16 +266,16 @@ input:focus ~ .bar:after {
 .highlight {
 	position:absolute;
 	height: 60%
-	width:100px;
+	width:200px;
 	top:25%;
 	left: 0;
 	pointer-events: none:
 	opacity:0.5;
 }
 input:focus ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
+	-webkit-animation:inputHighlighter 0.3s ease;
+	-moz-animation:inputHighlighter 0.3s ease;
+	animation:inputHighlighter 0.3s ease;
 }
 @-webkit-keyframes inputHighlighter {
 	from { background:#5264AE; }

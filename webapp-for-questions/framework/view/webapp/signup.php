@@ -1,5 +1,5 @@
 <main class="container">
-<h2>Sign up</h2>
+<h2>registreer</h2>
 
 <!-- name register -->
 <form action="<?= URL ?>webapp/signUpConfirm" method="POST">
@@ -15,7 +15,7 @@
 		<input type="password" minlength="4" required name="pwd"><br>
 		<span class="highlight"></span>
 		<span class="bar"></span>
-		<label> password</label>
+		<label> Wachtwoord </label>
 	</section>
 
 	<!-- confirm password -->
@@ -23,8 +23,8 @@
 		<input type="password" minlength="4" name="confirm-psw" required><br>
 		<span class="highlight"></span>
 		<span class="bar"></span>
-		<label>Bevestig Wachtwoord</label>
-		<button class="Register_button" type="submit" name="submit" >registreer</button>
+		<label> Bevestig_Wachtwoord </label>
+		<button class="register_button" type="submit" name="submit" >Registreer</button>
 	</section>
 </form>
 </main>
