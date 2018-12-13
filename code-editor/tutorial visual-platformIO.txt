@@ -1,0 +1,97 @@
+Visual studio code, of gewoon visual, is een alternatief voor het arduino IDE. 
+binnen deze editor is een extensie genaamd "platformIO" een omgeving voor het coderen voor 
+arduino. binnen deze omgeving zijn een hoop opties en functies die arduino IDE niet bied, 
+zoals het aanpassen van de kleuren, en het autmatisch afmaken van code. 
+
+deze handleiding is voor het installeren en opzetten van Visual Studio Code en platformIO
+
+-----------------------------------------------------------------------------------------
+W A A R S C H U W I N G
+
+
+deze editor is volledig in het engels. als je hier moeite mee hebt, raad ik Visual ten
+zeerste af. 
+-----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+
+stap 1: installeer Visual 
+
+ga naar https://visualstudio.microsoft.com/ en klik op de 2e download (Visual Studio Code) 
+loop door de download, klik bij alles op ja/ga akoord 
+
+------------------------------------------------------------------------------------------
+
+stap 2: installatie platformIO
+
+aan de rechterkant heb je een werkbalk, klik op hiet vierkant "extensions" 
+
+in de zoekbalk, type "platformIO IDE, en klik op de extensie, de goede is gemaakt door platformIO 
+klik op install, en daarna op reload. 
+
+platformIO is nu geinstalleerd 
+
+-------------------------------------------------------------------------------------------
+
+stap 3: opzetten arduino project 
+
+platformIO opent in zijn eigen file, wanneer je naar de main page wil, klik op  
+het symbool wat in je werkbalk is verschenen.
+
+klik op "new project"  
+
+geef je project een naam, kies bij board: voor jouw board, waarschijnlijk "arduino uno", 
+en gebruik Framework "arduino". 
+
+klik op finish, en wacht tot Visual klaar is. 
+
+aan de rechterkant is een mappenstructuur ontstaan. de map waar je in codeert is de "src" map
+klik op de "src" map, en op "main.cpp"  
+
+--------------------------------------------------------------------------------------------
+
+stap 4: testen van sketch en uploaden naar board 
+
+in principe kan je vanaf nu, wanneer je arduino is aangesloten, aan de slag, maar het is
+een goede gewoonte om eerst te testen. 
+
+ga naar het "platformio,ini" bestand en voer de volgende lijn onderaan in: monitor_speed = 9600
+
+deze code opent zometeen een monitor 
+
+ga terug naar "main.cpp" en voer deze code in: 
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#include <Arduino.h>
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  delay(500);
+  Serial.println("Dit is een Testbericht");
+} 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+deze code opent een link met de monitor en laat elke 2 seconden "Dit is een testbericht zien.
+
+onderaan de editor zie je een blauwe balk. 
+
+klik op "build" om de sketch te bouwen, en op "upload" om de sketch naar je arduino te uploaden.
+
+als je monitor opent en de tekst laat zien, is alles goed ingesteld en kan je hier verder
+met coderen voor arduino, met alle extra voordelen van Visual. 
+
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
