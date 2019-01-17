@@ -28,18 +28,18 @@ function getFAQ()
 	return $query->fetchAll();
 }
 //gets 1 question from the DB to edit
-function getQuestion($idG)
+function getQuestion($IDQ)
 {
 	$db = openDatabaseConnection();
 
 	$sql = "SELECT * FROM `questions`
 		JOIN `students` ON `questions`.`student_id` = `students`.`student_id`
 		JOIN `progress` ON `questions`.`progress_id` = `progress`.`progress_id`
-		WHERE question_id = :idG LIMIT 1";
+		WHERE question_id = :IDQ LIMIT 1";
 
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":idG" => $idG
+		":IDQ" => $IDQ
 	));
 
 	$db = null;

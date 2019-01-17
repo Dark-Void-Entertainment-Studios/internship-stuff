@@ -98,7 +98,6 @@ function signUpConfirm()
 function logout()
 {
 	session_start();
-	setcookie();
 	session_destroy();
 	header("location:" . URL . "webapp/index");
 	exit();
